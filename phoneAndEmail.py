@@ -4,7 +4,7 @@ import re, pyperclip
 #Create a regex for phone numbers
 
 phoneRegex = re.compile(r'''
-# 415-555-0000, 555-0000, (415) 555-0000, 555-0000 ext 12345, ext. 12345, x12345
+# 415-333-0000, 333-0000, (415) 333-0000, 333-0000 ext 12345, ext. 12345, x12345
 
 (
 ((\d\d\d)|(\(\d\d\d\)))?          # area code(optional)
@@ -29,7 +29,7 @@ emailRegex = re.compile(r'''
 #Get the text off the clipboard
 text = pyperclip.paste()
 
-#TODO: Extract the email/phone from this text
+#Extract the email/phone from this text
 extractedPhone = phoneRegex.findall(text)
 extractedEmail = emailRegex.findall(text)
 
